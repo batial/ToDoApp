@@ -3,12 +3,14 @@ import { ToDoCounter } from './ToDoCounter';
 import { ToDoSearch } from './ToDoSearch';
 import { ToDoList } from './ToDoList';
 import { ToDoItem } from './ToDoItem';
+import { CreateToDoButton } from './CreateToDoButton';
+
 
 function App() {
   return (
     <div className="App">
       
-      <ToDoCounter />
+      <ToDoCounter completed="2" total="5" />
       <ToDoSearch />
       <ToDoList>
 
@@ -17,7 +19,7 @@ function App() {
         <ToDoItem/>
       </ToDoList>
 
-      {/* <CreateToDoButton/> */}
+      <CreateToDoButton />
     </div>
   );
 }
