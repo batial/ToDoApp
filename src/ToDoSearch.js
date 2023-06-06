@@ -1,6 +1,6 @@
 function ToDoSearch (){
     return(
-      <input placeholder="Cortar cebolla" />
+      <input className="searchInput" placeholder="Cortar cebolla" />
     );
 }
 

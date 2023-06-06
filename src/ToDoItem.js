@@ -1,11 +1,11 @@
-function ToDoItem (props){
-    return(
-      <li>
-        <span>V</span>
-        <p>{props.text}</p>
-        <span>X</span>
-      </li>
-    );
+function ToDoItem(props) {
+  return (
+    <li className="toDoItem" >
+      <span className="eraseItem">X</span>
+      <p>{props.text}</p>
+      {/* <span>V</span> */}
+    </li>
+  );
 }
 
-export {ToDoItem};
+export { ToDoItem };
