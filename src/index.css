@@ -12,7 +12,7 @@ body {
 }
 
 :root {
-  --color1: rgb(164, 213, 248);
+  --color1: rgb(82, 199, 228);
   --color2: brown;
   --color3: rgb(28, 31, 39);
 }
@@ -29,7 +29,9 @@ body {
   display: block;
   margin: 0 auto;
   height: 2rem;
-  outline: none;
+}
+.searchInput:focus{
+  outline-color: var(--color1);
 }
 
 .toDoList {
@@ -37,19 +39,34 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  list-style: none;
 }
 
 .toDoItem {
-  display: block;
+  display: flex;
   margin: 0 auto;
   background-color: var(--color3);
   margin: 0.5rem;
   padding: 0.5rem;
 }
+.toDoP{
+  padding: 0 0 0 0.5rem ;
+}
+.toDoItemComplete{
+  text-decoration: line-through;
+}
+.completedItem{
+  color: green;
+}
+.noCompleted{
+  color: red;
+}
 .eraseItem {
-  display: flex;
-  justify-content: flex-end;
   color: var(--color2);
+  position: relative;
+  border: 1rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
 }
 
 .addToDoBtn {
@@ -63,5 +80,7 @@ body {
   width: 3rem;
   border-radius: 50%;
   border: none;
-  background-color: var(--color3);
+  background-color: var(--color1);
+  box-shadow: 0 0 0.5rem rgb(109, 143, 170);
+  color: white;
 }
