@@ -20,20 +20,30 @@ const defaultToDos = [
 
 function App() {
   const [todos, setTodos] = React.useState(defaultToDos);
-  const [searchValue , setSearchValue] = React.useState('');
+  const [searchValue, setSearchValue] = React.useState("");
 
-  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = defaultToDos.length;
 
-  console.log('Se buscó '+ searchValue);
+  const searchedTodos = todos.filter((todo) => {
+    const textItem = todo.text.toLocaleLowerCase();
+    const searchedText = searchValue.toLocaleLowerCase();
+    return textItem.includes(searchedText);
+  });
+
+  console.log("Se buscó " + searchValue);
 
   return (
     <>
       <ToDoCounter completed={completedTodos} total={totalTodos} />
       <ToDoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <ToDoList>
-        {defaultToDos.map((todo) => (
-          <ToDoItem key={todo.text} text={todo.text} completed={todo.completed} />
+        {searchedTodos.map((todo) => (
+          <ToDoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+          />
         ))}
       </ToDoList>
 
