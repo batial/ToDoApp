@@ -31,7 +31,16 @@ function App() {
     return textItem.includes(searchedText);
   });
 
-  console.log("Se buscó " + searchValue);
+  const completeTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) =>{
+        return todo.text === text
+      }
+    )
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  }
 
   return (
     <>
@@ -43,6 +52,7 @@ function App() {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            completeTodo={() => completeTodo(todo.text)}
           />
         ))}
       </ToDoList>
