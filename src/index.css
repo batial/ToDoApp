@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: rgb(28, 33, 43);
-  color: wheat;
+  color: rgb(216, 218, 238);
 }
 
 :root {
@@ -46,6 +46,7 @@ body {
   display: flex;
   margin: 0 auto;
   background-color: var(--color3);
+  border-radius: 1rem;
   margin: 0.5rem;
   padding: 0.5rem;
 }
@@ -54,6 +55,7 @@ body {
 }
 .toDoItemComplete{
   text-decoration: line-through;
+  color: rgb(101, 113, 123);
 }
 .completedItem{
   color: green;

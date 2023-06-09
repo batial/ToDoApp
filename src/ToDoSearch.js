@@ -1,6 +1,16 @@
-function ToDoSearch (){
+import React from "react";
+
+function ToDoSearch ({
+  searchValue,
+  setSearchValue
+}){
+  
+
+
     return(
-      <input className="searchInput" placeholder="Cortar cebolla" />
+      <input className="searchInput" value={searchValue} placeholder="Cortar cebolla" onChange={(event)=>{
+        setSearchValue(event.target.value);
+      }}/>
     );
 }
 

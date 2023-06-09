@@ -13,16 +13,24 @@ const defaultToDos = [
   },
   {
     text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    completed: true,
+    completed: 1,
   },
-  { text: "Cortar cebolla", completed: true },
+  { text: "Cortar cebolla", completed: false },
 ];
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultToDos);
+  const [searchValue , setSearchValue] = React.useState('');
+
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const totalTodos = defaultToDos.length;
+
+  console.log('Se buscó '+ searchValue);
+
   return (
     <>
-      <ToDoCounter completed="2" total="5" />
-      <ToDoSearch />
+      <ToDoCounter completed={completedTodos} total={totalTodos} />
+      <ToDoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <ToDoList>
         {defaultToDos.map((todo) => (
           <ToDoItem key={todo.text} text={todo.text} completed={todo.completed} />

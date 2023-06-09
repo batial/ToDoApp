@@ -1,6 +1,8 @@
 function CreateToDoButton() {
   return (
-    <button className="addToDoBtn"> 
+    <button className="addToDoBtn" onClick={()=>{
+      console.log('new todo');
+    }}> 
         +
     </button>
   )
