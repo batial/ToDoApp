@@ -42,6 +42,17 @@ function App() {
     setTodos(newTodos);
   }
 
+  const eraseTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) =>{
+        return todo.text === text
+      }
+    )
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  }
+
   return (
     <>
       <ToDoCounter completed={completedTodos} total={totalTodos} />
@@ -53,6 +64,7 @@ function App() {
             text={todo.text}
             completed={todo.completed}
             completeTodo={() => completeTodo(todo.text)}
+            eraseTodo={() => eraseTodo(todo.text)}
           />
         ))}
       </ToDoList>

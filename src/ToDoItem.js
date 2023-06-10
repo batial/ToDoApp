@@ -7,7 +7,7 @@ function ToDoItem(props) {
       <p className={`toDoP ${props.completed && "toDoItemComplete"}`}>
         {props.text}
       </p>
-      <span className="eraseItem">X</span>
+      <span className="eraseItem" onClick={props.eraseTodo}>X</span>
     </li>
   );
 }
