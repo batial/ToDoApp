@@ -23,7 +23,7 @@ function App() {
   const [searchValue, setSearchValue] = React.useState("");
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
-  const totalTodos = defaultToDos.length;
+  const totalTodos = todos.length;
 
   const searchedTodos = todos.filter((todo) => {
     const textItem = todo.text.toLocaleLowerCase();
@@ -33,25 +33,21 @@ function App() {
 
   const completeTodo = (text) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex(
-      (todo) =>{
-        return todo.text === text
-      }
-    )
+    const todoIndex = newTodos.findIndex((todo) => {
+      return todo.text === text;
+    });
     newTodos[todoIndex].completed = true;
     setTodos(newTodos);
-  }
+  };
 
   const eraseTodo = (text) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex(
-      (todo) =>{
-        return todo.text === text
-      }
-    )
+    const todoIndex = newTodos.findIndex((todo) => {
+      return todo.text === text;
+    });
     newTodos.splice(todoIndex, 1);
     setTodos(newTodos);
-  }
+  };
 
   return (
     <>
