@@ -1,13 +1,14 @@
-function ToDoItem(props) {
+import { CompleteIcon } from "./CompleteIcon";
+import { DeleteIcon } from "./DeleteIcon";
+
+function ToDoItem({completed, text, completeTodo, eraseTodo}) {
   return (
     <li className="toDoItem">
-      <span className="completedItem" onClick={props.completeTodo}>
-        V
-      </span>
-      <p className={`toDoP ${props.completed && "toDoItemComplete"}`}>
-        {props.text}
+      <CompleteIcon completeTodo={completeTodo} completed={completed}/>
+      <p className={`toDoP ${completed && "toDoItemComplete"}`}>
+        {text}
       </p>
-      <span className="eraseItem" onClick={props.eraseTodo}>X</span>
+      <DeleteIcon eraseTodo={eraseTodo} completed={completed}/>
     </li>
   );
 }

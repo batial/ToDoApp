@@ -22,7 +22,7 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--color1);
-
+  margin: 1rem;
 }
 
 .searchInput {
@@ -51,24 +51,23 @@ body {
   padding: 0.5rem;
 }
 .toDoP{
-  padding: 0 0 0 0.5rem ;
+  padding: 0 0.5rem ;
 }
 .toDoItemComplete{
   text-decoration: line-through;
   color: rgb(101, 113, 123);
 }
-.completedItem{
-  color: green;
-}
-.noCompleted{
-  color: red;
-}
+
 .eraseItem {
-  color: var(--color2);
-  position: relative;
-  border: 1rem;
-  bottom: 0.5rem;
-  left: 0.5rem;
+  width: 0.7rem;
+  fill: gray;
+}
+
+.eraseItem:hover{
+  fill: brown;
+}
+.checkItem:hover{
+  fill: green;
 }
 
 .addToDoBtn {
