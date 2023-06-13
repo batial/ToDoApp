@@ -22,19 +22,19 @@ import "./index.css";
  */
 /* localStorage.removeItem('tasks_v1'); */
 
-function useLocalStorage(itemName , initialValue) {
-  const localStorageItem = localStorage.getItem({itemName});
+function useLocalStorage(itemName, initialValue) {
+  const localStorageItem = localStorage.getItem({ itemName });
 
   let parsedItem;
 
   if (localStorageItem) {
     parsedItem = JSON.parse(localStorageItem);
   } else {
-    localStorage.setItem(itemName, JSON.stringify([initialValue]));
-    parsedItem = [initialValue];
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = initialValue;
   }
 
-  const [item , setItem] = React.useState(parsedItem);
+  const [item, setItem] = React.useState(parsedItem);
 
   //save tasks in localStorage and update the state
   const saveItem = (newItem) => {
@@ -42,13 +42,15 @@ function useLocalStorage(itemName , initialValue) {
     setItem(newItem);
   };
 
-  return [item , saveItem];
+  return [item, saveItem];
 }
 
 function App() {
   //get previous todos from localStorage
-
-  const [todos, saveTodos] = useLocalStorage('tasks_1', []);
+  const [todos, saveTodos] = useLocalStorage("tasks_v1", [
+    { text: "cortar cebolla", completed: false },
+    { text: "jugar al switch", completed: true },
+  ]);
   const [searchValue, setSearchValue] = React.useState("");
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
