@@ -1,9 +1,5 @@
-import { ToDoCounter } from "../ToDoCounter";
-import { ToDoSearch } from "../ToDoSearch";
-import { ToDoList } from "../ToDoList";
-import { ToDoItem } from "../ToDoItem";
-import { CreateToDoButton } from "../CreateToDoButton";
 import { useLocalStorage } from "./useLocalStorage";
+import { AppUI } from "./AppUI";
 import React from "react";
 import "../index.css";
 
@@ -59,23 +55,15 @@ function App() {
   };
 
   return (
-    <>
-      <ToDoCounter completed={completedTodos} total={totalTodos} />
-      <ToDoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-      <ToDoList>
-        {searchedTodos.map((todo) => (
-          <ToDoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            completeTodo={() => completeTodo(todo.text)}
-            eraseTodo={() => eraseTodo(todo.text)}
-          />
-        ))}
-      </ToDoList>
-
-      <CreateToDoButton />
-    </>
+    <AppUI
+      completedTodos={completedTodos}
+      totalTodos={totalTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      completeTodo={completeTodo}
+      eraseTodo={eraseTodo}
+    />
   );
 }
 
