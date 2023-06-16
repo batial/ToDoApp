@@ -1,10 +1,11 @@
-import { ToDoCounter } from "./ToDoCounter";
-import { ToDoSearch } from "./ToDoSearch";
-import { ToDoList } from "./ToDoList";
-import { ToDoItem } from "./ToDoItem";
-import { CreateToDoButton } from "./CreateToDoButton";
+import { ToDoCounter } from "../ToDoCounter";
+import { ToDoSearch } from "../ToDoSearch";
+import { ToDoList } from "../ToDoList";
+import { ToDoItem } from "../ToDoItem";
+import { CreateToDoButton } from "../CreateToDoButton";
+import { useLocalStorage } from "./useLocalStorage";
 import React from "react";
-import "./index.css";
+import "../index.css";
 
 /* const defaultToDos = [
   {
@@ -21,29 +22,6 @@ import "./index.css";
 /* localStorage.setItem('tasks_v1', defaultToDos);
  */
 /* localStorage.removeItem('tasks_v1'); */
-
-function useLocalStorage(itemName, initialValue) {
-  const localStorageItem = localStorage.getItem({ itemName });
-
-  let parsedItem;
-
-  if (localStorageItem) {
-    parsedItem = JSON.parse(localStorageItem);
-  } else {
-    localStorage.setItem(itemName, JSON.stringify(initialValue));
-    parsedItem = initialValue;
-  }
-
-  const [item, setItem] = React.useState(parsedItem);
-
-  //save tasks in localStorage and update the state
-  const saveItem = (newItem) => {
-    localStorage.setItem("tasks_v1", JSON.stringify(newItem));
-    setItem(newItem);
-  };
-
-  return [item, saveItem];
-}
 
 function App() {
   //get previous todos from localStorage
