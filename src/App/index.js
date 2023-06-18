@@ -21,7 +21,7 @@ import "../index.css";
 
 function App() {
   //get previous todos from localStorage
-  const [todos, saveTodos] = useLocalStorage("tasks_v1", [
+  const {item : todos, saveItem : saveTodos, loading, error} = useLocalStorage("tasks_v1", [
     { text: "cortar cebolla", completed: false },
     { text: "jugar al switch", completed: true },
   ]);
@@ -56,6 +56,8 @@ function App() {
 
   return (
     <AppUI
+      loading={loading}
+      error={error}
       completedTodos={completedTodos}
       totalTodos={totalTodos}
       searchValue={searchValue}
