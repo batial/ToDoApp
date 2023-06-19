@@ -1,0 +1,9 @@
+.emptyTodosAlert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aqua;
+    position: fixed;
+    bottom: 2rem;
+    font-size: 2rem;
+}

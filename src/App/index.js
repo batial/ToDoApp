@@ -21,9 +21,9 @@ import "../index.css";
 
 function App() {
   //get previous todos from localStorage
-  const {item : todos, saveItem : saveTodos, loading, error} = useLocalStorage("tasks_v1", [
+  const {item : todos, saveItem : saveTodos, loading, error} = useLocalStorage("tasks_v1", [/* 
     { text: "cortar cebolla", completed: false },
-    { text: "jugar al switch", completed: true },
+    { text: "jugar al switch", completed: true }, */
   ]);
   const [searchValue, setSearchValue] = React.useState("");
 
