@@ -38,3 +38,19 @@ function useLocalStorage(itemName, initialValue) {
 }
 
 export { useLocalStorage };
+
+/* const defaultToDos = [
+  {
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    completed: true,
+  },
+  {
+    text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    completed: 1,
+  },
+  { text: "Cortar cebolla", completed: false },
+]; */
+
+/* localStorage.setItem('tasks_v1', defaultToDos);
+ */
+/* localStorage.removeItem('tasks_v1'); */
