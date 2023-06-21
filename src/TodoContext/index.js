@@ -15,6 +15,7 @@ function TodoProvider({ children }) {
     { text: "jugar al switch", completed: true },
   ]);
   const [searchValue, setSearchValue] = React.useState("");
+  const [openModal, setOpenModal] = React.useState(true);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -41,12 +42,11 @@ function TodoProvider({ children }) {
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
-  
 
   return (
     <TodoContext.Provider
-      value={
-        {loading,
+      value={{
+        loading,
         error,
         completedTodos,
         totalTodos,
@@ -54,8 +54,10 @@ function TodoProvider({ children }) {
         setSearchValue,
         searchedTodos,
         completeTodo,
-        eraseTodo}
-      }
+        eraseTodo,
+        openModal,
+        setOpenModal,
+      }}
     >
       {children}
     </TodoContext.Provider>
