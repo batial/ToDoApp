@@ -15,7 +15,7 @@ function TodoProvider({ children }) {
     { text: "jugar al switch", completed: true },
   ]);
   const [searchValue, setSearchValue] = React.useState("");
-  const [openModal, setOpenModal] = React.useState(true);
+  const [openModal, setOpenModal] = React.useState(false);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -25,6 +25,15 @@ function TodoProvider({ children }) {
     const searchedText = searchValue.toLocaleLowerCase();
     return textItem.includes(searchedText);
   });
+
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      text: text,
+      completed: false,
+    });
+    saveTodos(newTodos);
+  };
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => {
@@ -53,6 +62,7 @@ function TodoProvider({ children }) {
         searchValue,
         setSearchValue,
         searchedTodos,
+        addTodo,
         completeTodo,
         eraseTodo,
         openModal,

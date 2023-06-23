@@ -1,7 +1,9 @@
-function CreateToDoButton() {
+import "./CreateToDoButton.css"
+
+function CreateToDoButton({setOpenModal}) {
   return (
     <button className="addToDoBtn" onClick={()=>{
-      console.log('new todo');
+      setOpenModal(state => !state);
     }}> 
         +
     </button>

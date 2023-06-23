@@ -1,0 +1,55 @@
+form {
+    width: 90%;
+    max-width: 20rem;
+    background-color: rgb(58, 62, 82);
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+textarea {
+    margin: 1rem;
+    width: 18rem;
+    height: 10rem;
+    border-radius: .2rem;
+    border: .2rem solid rgb(255, 255, 255);
+    padding: .2rem;
+    resize: none;
+}
+
+textarea:focus{
+    border-radius: .2rem;
+    border-color: rgb(116, 169, 243);
+    outline: 0 none;
+}
+
+.TodoFormBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.TodoFormBtn {
+    width: 5rem;
+    border: 0;
+    border-radius: .1rem;
+    padding: .2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.TodoFormBtn-cancel{
+    background-color: rgb(83, 88, 111);
+}
+
+.TodoFormBtn-add{
+    background-color: rgb(127, 203, 250);
+}
+
+.TodoFormBtn-add:hover{
+    background-color: rgb(65, 131, 222);
+}
