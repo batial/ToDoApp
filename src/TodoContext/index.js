@@ -10,9 +10,9 @@ function TodoProvider({ children }) {
     saveItem: saveTodos,
     loading,
     error,
-  } = useLocalStorage("tasks_v1", [
+  } = useLocalStorage("tasks_v1", [/* 
     { text: "cortar cebolla", completed: false },
-    { text: "jugar al switch", completed: true },
+    { text: "jugar al switch", completed: true }, */
   ]);
   const [searchValue, setSearchValue] = React.useState("");
   const [openModal, setOpenModal] = React.useState(false);

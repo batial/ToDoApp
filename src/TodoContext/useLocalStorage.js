@@ -8,8 +8,9 @@ function useLocalStorage(itemName, initialValue) {
   React.useEffect(() => {
     setTimeout(()=>{
       try {
-        const localStorageItem = localStorage.getItem({ itemName });
+        const localStorageItem = localStorage.getItem(itemName);
         let parsedItem;
+        console.log(localStorageItem)
   
         if (localStorageItem) {
           parsedItem = JSON.parse(localStorageItem);
@@ -25,7 +26,8 @@ function useLocalStorage(itemName, initialValue) {
         setError(true);
       }
     }, 2000);
-  }, [initialValue, itemName]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   //save tasks in localStorage and update the state
   const saveItem = (newItem) => {
