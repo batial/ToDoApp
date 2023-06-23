@@ -2,8 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: aqua;
+    color: rgb(82, 199, 228);
     position: fixed;
     bottom: 2rem;
     font-size: 2rem;
+}
+
+.arrowIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

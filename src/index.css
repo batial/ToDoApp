@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Calibri, Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -28,10 +29,14 @@ body {
 .searchInput {
   display: block;
   margin: 0 auto;
-  height: 2rem;
+  border-radius: .2rem;
+  border: .2rem solid rgb(255, 255, 255);
+  padding: .2rem;
 }
 .searchInput:focus{
-  outline-color: var(--color1);
+  border-radius: .2rem;
+  border-color: var(--color1);
+  outline: 0 none;
 }
 
 .toDoList {
@@ -47,8 +52,8 @@ body {
   margin: 0 auto;
   background-color: var(--color3);
   border-radius: 1rem;
-  margin: 0.5rem;
-  padding: 0.5rem;
+  margin: .5rem;
+  padding: .5rem;
 }
 .toDoP{
   padding: 0 0.5rem ;
