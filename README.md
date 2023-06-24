@@ -19,7 +19,7 @@ In ToDoApp you can:
 The ToDoApp is deployed and accessible at: https://batial.github.io/ToDoApp/
 
 # Technologies Used
-React.js
-HTML
-CSS
-JavaScript
+* React.js
+* HTML
+* CSS
+* JavaScript
